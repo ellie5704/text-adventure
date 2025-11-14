@@ -214,7 +214,13 @@ document.getElementById("restart").addEventListener("click", () => {
 document.getElementById("finish").addEventListener("click", () => {
     if (player.inventory.length > 3) {
         showOutput("Congratulations! You've collected enough items to have the perfect nap! You win!");
-        updateEventImage(item);
+
+        document.body.classList.remove("bg-orange-100");
+        document.body.classList.add("bg-black");
+        
+        const img = document.getElementById("currentImage");
+        img.src = "https://copilot.microsoft.com/th/id/BCO.14575970-e335-4686-ba6b-a6b58eff82a9.png";
+        img.alt = "Sleepy cat";
     }
     else {
         showOutput("Oh no! You haven't collected enough items for the perfect nap. Better luck next time!");
